@@ -55,7 +55,7 @@ public class SentlyResource extends BaseResource {
 		from = filtrarPython(from);
 		text = filtrarPython(text);
 		
-		logger.info("Encaminhando mensagem de {} para a fila {} (conteudo: {})", from, topicArn, text);
+		logger.info("Encaminhando nova mensagem de {} para a fila {} (conteudo: {})", from, topicArn, text);
 
 		PublishResult resultado = sns.publish(new PublishRequest()
 				.withMessage(text).withSubject("CMD").withTopicArn(topicArn));
